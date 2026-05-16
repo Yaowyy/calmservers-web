@@ -60,7 +60,8 @@
     .hero h1 { font-family: var(--display); font-size: clamp(3.5rem,10vw,7rem); letter-spacing: .06em; line-height: 1; margin-bottom: .4rem; }
     .hero h1 em { color: var(--orange); font-style: normal; }
     .hero-sub { color: var(--muted); font-size: clamp(.95rem,2vw,1.15rem); max-width: 520px; margin: 0 auto 2.5rem; }
-    .ctas { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .ctas { display: flex; gap: .75rem; flex-wrap: wrap; justify-content: center; }
+    @media(max-width:480px) { .btn-primary, .btn-ghost, .btn-discord { min-width: 0; width: 100%; } .ctas { flex-direction: column; align-items: stretch; max-width: 280px; margin: 0 auto; } }
     .btn-primary {
       display: inline-flex; align-items: center; justify-content: center; gap: 8px;
       min-width: 160px;
@@ -83,7 +84,8 @@
       margin-top: 2rem; display: inline-flex; align-items: center; gap: 12px;
       background: var(--bg2); border: 1px solid var(--border); border-radius: 6px;
       padding: 10px 18px; font-family: 'Courier New', monospace;
-      font-size: .88rem; color: var(--orange);
+      font-size: clamp(.7rem,.88rem,1rem); color: var(--orange);
+      max-width: 100%; flex-wrap: wrap; justify-content: center;
     }
     .copy-btn {
       background: none; border: none; cursor: pointer; color: var(--muted);
@@ -114,11 +116,12 @@
     .stat-lbl { font-size: .76rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; margin-top: .35rem; }
 
     /* FEATURES */
-    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px,1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
     .feat { background: var(--bg2); padding: 1.75rem; transition: background .2s; }
     .feat:hover { background: var(--bg3); }
-    .feat-icon { font-size: 1.6rem; margin-bottom: .75rem; }
-    .feat h3 { font-family: var(--display); font-size: 1.15rem; letter-spacing: .05em; color: var(--orange); margin-bottom: .3rem; }
+    .feat-header { display: flex; align-items: center; gap: 10px; margin-bottom: .5rem; }
+    .feat-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .feat h3 { font-family: var(--display); font-size: 1.15rem; letter-spacing: .05em; color: var(--orange); line-height: 1; white-space: nowrap; }
     .feat p { font-size: .86rem; color: var(--muted); line-height: 1.6; }
 
     /* MODS */
@@ -205,7 +208,7 @@
       Play on Steam
     </a>
     <a class="btn-discord" href="https://discord.gg/3hkgmwPm28" target="_blank" rel="noopener">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 127.14 96.36"><path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"/></svg>
       Join Discord
     </a>
   </div>
@@ -217,8 +220,8 @@
     <span class="dot"></span>
     WEEKLY WIPES — THURSDAYS 7PM BST
   </div>
-  <a href="https://rustservers.gg/server/5937549/vote" target="_blank" rel="noopener" style="margin-top:1.75rem;display:inline-block;border-radius:4px;overflow:hidden;opacity:0.9;transition:opacity .2s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
-    <img src="https://rustservers.gg/votebanner-5937549-4D5988.png" border="0" width="468" height="60" alt="Vote for EU Calm on RustServers.gg" style="display:block;" />
+  <a href="https://rustservers.gg/server/5937549/vote" target="_blank" rel="noopener" style="margin-top:1.75rem;display:inline-block;border-radius:4px;overflow:hidden;opacity:0.9;transition:opacity .2s;max-width:100%;width:468px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
+    <img src="https://rustservers.gg/votebanner-5937549-4D5988.png" border="0" alt="Vote for EU Calm on RustServers.gg" style="display:block;width:100%;height:auto;" />
   </a>
 </section>
 
@@ -242,17 +245,15 @@
 <section>
   <div class="container">
     <div class="label">Features</div>
-    <div class="sec-title">Vanilla+, not pay-to-win.</div>
+    <div class="sec-title">Vanilla+, No Pay To Win.</div>
     <p class="sec-sub">Quality-of-life improvements that make Rust more enjoyable — nothing that breaks balance.</p>
     <div class="features">
       <div class="feat">
-        <div class="feat-icon">⚔️</div>
-        <h3>Vanilla+ Mode</h3>
+        <div class="feat-header"><div class="feat-icon">⚔️</div><h3>Vanilla+ Mode</h3></div>
         <p>Pure Rust gameplay with QoL-only mods. No gun kits, no teleports, no economy — just the game.</p>
       </div>
       <div class="feat">
-        <div class="feat-icon">🛡️</div>
-        <h3>Offline Protection</h3>
+        <div class="feat-header"><div class="feat-icon">🛡️</div><h3>Offline Protection</h3></div>
         <p>
           0–10 min — 90% protection<br>
           1–3 hours — 80% protection<br>
@@ -261,33 +262,27 @@
         </p>
       </div>
       <div class="feat">
-        <div class="feat-icon">🚁</div>
-        <h3>Heli Crashes Anywhere</h3>
+        <div class="feat-header"><div class="feat-icon">🚁</div><h3>Heli Crashes Anywhere</h3></div>
         <p>Helicopter crashes happen across the full map, not just monuments. More loot, more action.</p>
       </div>
       <div class="feat">
-        <div class="feat-icon">🌙</div>
-        <h3>Vote to Skip Night</h3>
+        <div class="feat-header"><div class="feat-icon">🌙</div><h3>Vote to Skip Night</h3></div>
         <p>Community can vote to fast-forward through the night so you're never stuck waiting.</p>
       </div>
       <div class="feat">
-        <div class="feat-icon">📦</div>
-        <h3>Stack Modifier</h3>
+        <div class="feat-header"><div class="feat-icon">📦</div><h3>Stack Modifier</h3></div>
         <p>Larger stack sizes reduce inventory frustration without changing the core economy.</p>
       </div>
       <div class="feat">
-        <div class="feat-icon">🔧</div>
-        <h3>Extended Workbench</h3>
+        <div class="feat-header"><div class="feat-icon">🔧</div><h3>Extended Workbench</h3></div>
         <p>Craft from nearby workbenches without having to stand right next to them.</p>
       </div>
       <div class="feat">
-        <div class="feat-icon">♻️</div>
-        <h3>Quick Recyclers</h3>
+        <div class="feat-header"><div class="feat-icon">♻️</div><h3>Quick Recyclers</h3></div>
         <p>Faster recycler speed so you spend less time recycling and more time playing.</p>
       </div>
       <div class="feat">
-        <div class="feat-icon">🗺️</div>
-        <h3>Map My Airdrop</h3>
+        <div class="feat-header"><div class="feat-icon">🗺️</div><h3>Map My Airdrop</h3></div>
         <p>Airdrops are pinned on the map so you can actually race to them.</p>
       </div>
     </div>
@@ -329,8 +324,8 @@
 <div class="discord-wrap">
   <div class="discord-card">
     <div class="disc-icon">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+      <svg viewBox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg" fill="white">
+        <path d="M107.7 8.07A105.15 105.15 0 0 0 81.47 0a72.06 72.06 0 0 0-3.36 6.83 97.68 97.68 0 0 0-29.11 0A72.37 72.37 0 0 0 45.64 0a105.89 105.89 0 0 0-26.25 8.09C2.79 32.65-1.71 56.6.54 80.21a105.73 105.73 0 0 0 32.17 16.15 77.7 77.7 0 0 0 6.89-11.11 68.42 68.42 0 0 1-10.85-5.18c.91-.66 1.8-1.34 2.66-2a75.57 75.57 0 0 0 64.32 0c.87.71 1.76 1.39 2.66 2a68.68 68.68 0 0 1-10.87 5.19 77 77 0 0 0 6.89 11.1 105.25 105.25 0 0 0 32.19-16.14c2.64-27.38-4.51-51.11-18.9-72.15ZM42.45 65.69C36.18 65.69 31 60 31 53s5-12.74 11.43-12.74S54 46 53.89 53s-5.05 12.69-11.44 12.69Zm42.24 0C78.41 65.69 73.25 60 73.25 53s5-12.74 11.44-12.74S96.23 46 96.12 53s-5.04 12.69-11.43 12.69Z"/>
       </svg>
     </div>
     <h2>Join the Community</h2>
