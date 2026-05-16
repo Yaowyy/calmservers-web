@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plugin Updates — EU Calm</title>
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --orange: #F5A623;
+      --bg: #0D0D0D;
+      --bg2: #141414;
+      --bg3: #1C1C1C;
+      --border: rgba(255,255,255,0.07);
+      --text: #F0EDE8;
+      --muted: #888480;
+      --display: 'Bebas Neue', sans-serif;
+      --body: 'DM Sans', sans-serif;
+
+      --red:    #E05252;
+      --red-bg: rgba(224, 82, 82, 0.08);
+      --red-border: rgba(224, 82, 82, 0.3);
+
+      --green:    #4CAF7D;
+      --green-bg: rgba(76, 175, 125, 0.08);
+      --green-border: rgba(76, 175, 125, 0.3);
+
+      --blue:    #4D8EE0;
+      --blue-bg: rgba(77, 142, 224, 0.08);
+      --blue-border: rgba(77, 142, 224, 0.3);
+
+      --orange2:    #F5A623;
+      --orange2-bg: rgba(245, 166, 35, 0.08);
+      --orange2-border: rgba(245, 166, 35, 0.3);
+
+      --purple:    #9B6DD6;
+      --purple-bg: rgba(155, 109, 214, 0.08);
+      --purple-border: rgba(155, 109, 214, 0.3);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.7; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 64px;
+      background: rgba(13,13,13,0.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(245,166,35,0.18);
+    }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-brand img { height: 34px; width: auto; }
+    .nav-brand span { font-family: var(--display); font-size: 1.5rem; letter-spacing: .08em; color: var(--orange); }
+    .back-link { font-size: .82rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .back-link:hover { color: var(--orange); }
+
+    /* MAIN */
+    main { max-width: 900px; margin: 0 auto; padding: 6rem 2rem 5rem; }
+
+    /* PAGE HEADER */
+    .page-header { margin-bottom: 3rem; }
+    .page-label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: .4rem; }
+    .page-title { font-family: var(--display); font-size: clamp(2.5rem, 6vw, 4rem); letter-spacing: .05em; line-height: 1; margin-bottom: .75rem; }
+    .page-sub { color: var(--muted); font-size: .92rem; max-width: 500px; }
+
+    /* PLUGIN BLOCK */
+    .plugin { margin-bottom: 2rem; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+
+    .plugin-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 1rem 1.5rem; cursor: pointer;
+      transition: background .2s;
+      user-select: none;
+    }
+    .plugin-header:hover { filter: brightness(1.1); }
+
+    .plugin-icon {
+      width: 32px; height: 32px; border-radius: 6px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; flex-shrink: 0;
+    }
+
+    .plugin-name {
+      font-family: var(--display); font-size: 1.4rem; letter-spacing: .06em; flex: 1;
+    }
+
+    .plugin-tag {
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em;
+      text-transform: uppercase; padding: 3px 10px; border-radius: 999px;
+      opacity: .85;
+    }
+
+    .plugin-chevron {
+      width: 20px; height: 20px; opacity: .6; transition: transform .3s;
+      flex-shrink: 0;
+    }
+    .plugin.open .plugin-chevron { transform: rotate(180deg); }
+
+    .plugin-body {
+      display: none; border-top: 1px solid var(--border);
+    }
+    .plugin.open .plugin-body { display: block; }
+
+    .change-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      padding: .85rem 1.5rem; border-bottom: 1px solid var(--border);
+      font-size: .9rem; color: var(--muted);
+      transition: background .15s;
+    }
+    .change-item:last-child { border-bottom: none; }
+    .change-item:hover { background: rgba(255,255,255,0.02); }
+
+    .bullet {
+      width: 6px; height: 6px; border-radius: 50%;
+      flex-shrink: 0; margin-top: 8px;
+    }
+
+    .placeholder {
+      padding: 2rem 1.5rem; color: var(--muted);
+      font-size: .88rem; font-style: italic;
+    }
+
+    /* COLOUR THEMES */
+    .theme-red .plugin-header   { background: var(--red-bg); border-bottom-color: var(--red-border); }
+    .theme-red .plugin-name     { color: var(--red); }
+    .theme-red .plugin-icon     { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+    .theme-red .plugin-tag      { background: var(--red-bg); color: var(--red); border: 1px solid var(--red-border); }
+    .theme-red .bullet          { background: var(--red); }
+    .theme-red                  { border-color: var(--red-border); }
+
+    .theme-green .plugin-header { background: var(--green-bg); }
+    .theme-green .plugin-name   { color: var(--green); }
+    .theme-green .plugin-icon   { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .theme-green .plugin-tag    { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .theme-green .bullet        { background: var(--green); }
+    .theme-green                { border-color: var(--green-border); }
+
+    .theme-blue .plugin-header  { background: var(--blue-bg); }
+    .theme-blue .plugin-name    { color: var(--blue); }
+    .theme-blue .plugin-icon    { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+    .theme-blue .plugin-tag     { background: var(--blue-bg); color: var(--blue); border: 1px solid var(--blue-border); }
+    .theme-blue .bullet         { background: var(--blue); }
+    .theme-blue                 { border-color: var(--blue-border); }
+
+    .theme-orange .plugin-header { background: var(--orange2-bg); }
+    .theme-orange .plugin-name   { color: var(--orange2); }
+    .theme-orange .plugin-icon   { background: var(--orange2-bg); color: var(--orange2); border: 1px solid var(--orange2-border); }
+    .theme-orange .plugin-tag    { background: var(--orange2-bg); color: var(--orange2); border: 1px solid var(--orange2-border); }
+    .theme-orange .bullet        { background: var(--orange2); }
+    .theme-orange                { border-color: var(--orange2-border); }
+
+    .theme-purple .plugin-header { background: var(--purple-bg); }
+    .theme-purple .plugin-name   { color: var(--purple); }
+    .theme-purple .plugin-icon   { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+    .theme-purple .plugin-tag    { background: var(--purple-bg); color: var(--purple); border: 1px solid var(--purple-border); }
+    .theme-purple .bullet        { background: var(--purple); }
+    .theme-purple                { border-color: var(--purple-border); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid rgba(245,166,35,0.18); padding: 2rem;
+      display: flex; flex-direction: column; align-items: center; gap: .75rem; text-align: center;
+    }
+    .foot-brand { display: flex; align-items: center; gap: 8px; text-decoration: none; }
+    .foot-brand img { height: 26px; }
+    .foot-brand span { font-family: var(--display); font-size: 1.2rem; letter-spacing: .08em; color: var(--orange); }
+    footer p { font-size: .76rem; color: var(--muted); }
+
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(245,166,35,0.18); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--orange); }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-brand" href="index.html">
+    <img src="logo.png" alt="Calm" />
+    <span>CALM</span>
+  </a>
+  <a class="back-link" href="index.html">← Back to site</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <div class="page-label">Changelog</div>
+    <h1 class="page-title">Plugin Updates</h1>
+    <p class="page-sub">All changes to EU Calm's custom plugins, listed by plugin.</p>
+  </div>
+
+  <!-- CalmProtection — RED -->
+  <div class="plugin theme-red open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">🛡️</div>
+      <div class="plugin-name">CalmProtection</div>
+      <div class="plugin-tag">Offline Protection</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="placeholder">Changes will be here.</div>
+    </div>
+  </div>
+
+  <!-- CalmHelper — GREEN -->
+  <div class="plugin theme-green open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">🔧</div>
+      <div class="plugin-name">CalmHelper</div>
+      <div class="plugin-tag">Quality of Life</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="placeholder">Changes will be here.</div>
+    </div>
+  </div>
+
+  <!-- CalmVote — BLUE -->
+  <div class="plugin theme-blue open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">🗳️</div>
+      <div class="plugin-name">CalmVote</div>
+      <div class="plugin-tag">Voting System</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="placeholder">Changes will be here.</div>
+    </div>
+  </div>
+
+  <!-- CalmAnnouncer — ORANGE -->
+  <div class="plugin theme-orange open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">📢</div>
+      <div class="plugin-name">CalmAnnouncer</div>
+      <div class="plugin-tag">Announcements</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="placeholder">Changes will be here.</div>
+    </div>
+  </div>
+
+  <!-- CalmNight — PURPLE -->
+  <div class="plugin theme-purple open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">🌙</div>
+      <div class="plugin-name">CalmNight</div>
+      <div class="plugin-tag">Night System</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="placeholder">Changes will be here.</div>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  <a class="foot-brand" href="index.html">
+    <img src="logo.png" alt="Calm" />
+    <span>CALM</span>
+  </a>
+  <p>
+    <a href="https://calmservers.com" style="color:var(--orange);text-decoration:none;">calmservers.com</a>
+    &nbsp;·&nbsp; This site does not use cookies or collect personal data.
+    &nbsp;·&nbsp; <a href="privacy.html" style="color:var(--orange);text-decoration:none;">Privacy Policy</a>
+  </p>
+</footer>
+
+<script>
+  function toggle(header) {
+    const plugin = header.closest('.plugin');
+    plugin.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
