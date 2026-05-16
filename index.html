@@ -40,39 +40,7 @@
       --body: 'DM Sans', sans-serif;
     }
     html { scroll-behavior: smooth; }
-    body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }.88); backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border);
-    }
-    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
-    .nav-brand img { height: 34px; width: auto; }
-    .nav-brand span { font-family: var(--display); font-size: 1.5rem; letter-spacing: .08em; color: var(--orange); }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-links a {
-      font-size: .82rem; font-weight: 600; letter-spacing: .06em;
-      text-transform: uppercase; color: var(--muted); text-decoration: none;
-      transition: color .2s; position: relative; padding-bottom: 2px;
-    }
-    .nav-links a::after {
-      content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
-      height: 1px; background: var(--orange);
-      transform: scaleX(0); transition: transform .2s;
-    }
-    .nav-links a:hover { color: var(--text); }
-    .nav-links a:hover::after { transform: scaleX(1); }
-    .nav-links a.active { color: var(--orange); }
-    .nav-links a.active::after { transform: scaleX(1); }
-    .nav-right { display: flex; justify-content: flex-end; }
-    .nav-btn {
-      font-family: var(--body); font-size: .82rem; font-weight: 700;
-      letter-spacing: .06em; text-transform: uppercase;
-      color: #0d0d0d; background: var(--orange);
-      padding: 8px 20px; border-radius: 4px; text-decoration: none;
-      transition: background .2s; display: flex; align-items: center; gap: 6px;
-    }
-    .nav-btn:hover { background: #ffc040; }
-      .nav-btn { padding: 8px 12px; }
-      .nav-links { gap: 1.2rem; }
-    }
+    body { background: var(--bg); color: var(--text); font-family: var(--body); font-size: 16px; line-height: 1.7; overflow-x: hidden; }
 
     /* HERO */
     .hero {
@@ -325,8 +293,6 @@
     </div>
   </div>
 </section>
-
-
 
 <!-- RULES -->
 <section>
