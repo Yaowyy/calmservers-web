@@ -103,8 +103,10 @@
     @keyframes pulse { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
 
     /* SECTIONS */
-    section { padding: 5rem 2rem; }
+    section { padding: 5rem 0; }
+    .section-inner { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
     .container { max-width: 760px; margin: 0 auto; }
+    .sec-header { margin-bottom: 2.5rem; }
     .label { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); font-weight: 600; margin-bottom: .4rem; }
     .sec-title { font-family: var(--display); font-size: clamp(2rem,5vw,3rem); letter-spacing: .05em; line-height: 1.05; margin-bottom: .6rem; }
     .sec-sub { color: var(--muted); max-width: 500px; margin-bottom: 2.5rem; font-size: .92rem; }
@@ -247,9 +249,12 @@
 
 <!-- STATS -->
 <section>
-  <div class="container">
-    <div class="label">Server at a glance</div>
-    <div class="sec-title">Built to deliver quality.</div>
+  <div class="section-inner">
+    <div class="sec-header">
+      <div class="label">Server at a glance</div>
+      <div class="sec-title">Built to deliver quality.</div>
+    </div>
+    <div class="container">
     <div class="stats">
       <div class="stat"><div class="stat-val">2x</div><div class="stat-lbl">Gather Rate</div></div>
       <div class="stat"><div class="stat-val">50%</div><div class="stat-lbl">Offline Protection</div></div>
@@ -259,14 +264,18 @@
       <div class="stat"><div class="stat-val">1SEC</div><div class="stat-lbl">Recycling Speed</div></div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- FEATURES -->
 <section>
-  <div class="container">
-    <div class="label">Features</div>
-    <div class="sec-title">Vanilla+, No Pay To Win.</div>
-    <p class="sec-sub">Quality-of-life improvements that make Rust more enjoyable — nothing that breaks balance.</p>
+  <div class="section-inner">
+    <div class="sec-header">
+      <div class="label">Features</div>
+      <div class="sec-title">Vanilla+, No Pay To Win.</div>
+      <p class="sec-sub">Quality-of-life improvements that make Rust more enjoyable — nothing that breaks balance.</p>
+    </div>
+    <div class="container">
     <div class="features">
       <a href="updates.html" class="feat feat-red" style="text-decoration:none;display:block;">
         <div class="feat-header"><div class="feat-icon">🛡️</div><h3>Calm Protection</h3></div>
@@ -309,14 +318,18 @@
       </div>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- RULES -->
 <section>
-  <div class="container">
-    <div class="label">Server Rules</div>
-    <div class="sec-title">Keep it calm.</div>
-    <p class="sec-sub">Simple rules that keep the server a good place for everyone.</p>
+  <div class="section-inner">
+    <div class="sec-header">
+      <div class="label">Server Rules</div>
+      <div class="sec-title">Keep it calm.</div>
+      <p class="sec-sub">Simple rules that keep the server a good place for everyone.</p>
+    </div>
+    <div class="container">
     <div class="rules-grid">
       <div class="rule">
         <div class="chk"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
@@ -339,6 +352,7 @@
         <p><strong>Report rulebreakers privately</strong> — contact admin directly, don't call out in chat.</p>
       </div>
     </div>
+  </div>
   </div>
 </section>
 
