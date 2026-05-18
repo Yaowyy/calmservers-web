@@ -139,9 +139,12 @@
     .feat-purple .feat-overlay { background: rgba(26,16,37,0.92); color: #9B6DD6; }
     .feat-overlay span { font-size: 1.1rem; }
     .feat-overlay small { font-size: .7rem; color: var(--muted); letter-spacing: .12em; font-family: var(--body); text-transform: uppercase; font-weight: 600; }
+    .feat-filler { background: var(--bg2); opacity: .45; cursor: default; }
+    .feat-filler:hover { background: var(--bg2); opacity: .6; }
+    .feat-filler h3 { color: var(--muted); }
     .feat-header { display: flex; align-items: center; gap: 8px; margin-bottom: .5rem; flex-wrap: nowrap; }
     .feat-icon { font-size: 1.1rem; flex-shrink: 0; }
-    .feat h3 { font-family: var(--display); font-size: 1.05rem; letter-spacing: .05em; color: var(--orange); line-height: 1.1; white-space: normal; word-break: break-word; min-width: 0; }
+    .feat h3 { font-family: var(--display); font-size: 1.25rem; letter-spacing: .05em; color: var(--orange); line-height: 1.1; white-space: normal; word-break: break-word; min-width: 0; }
     .feat p { font-size: .84rem; color: var(--muted); line-height: 1.6; word-break: break-word; overflow-wrap: anywhere; }
     @media(max-width:600px) { .features { grid-template-columns: 1fr 1fr; } }
     @media(max-width:400px) { .features { grid-template-columns: 1fr; } .feat { padding: 1.25rem; } }
@@ -394,6 +397,34 @@
       setTimeout(() => btn.textContent = 'Copy', 2000);
     });
   }
+
+  // Auto-inject filler tile if last row of features grid is incomplete
+  (function() {
+    const grid = document.querySelector('.features');
+    if (!grid) return;
+
+    function updateFiller() {
+      // Remove any existing filler first
+      const existing = grid.querySelector('.feat-filler');
+      if (existing) existing.remove();
+
+      const tiles = grid.querySelectorAll('.feat:not(.feat-filler)').length;
+      const firstTile = grid.querySelector('.feat');
+      if (!firstTile) return;
+      const cols = Math.round(grid.offsetWidth / firstTile.offsetWidth);
+      if (cols < 2) return; // single column — no filler needed
+      const remainder = tiles % cols;
+      if (remainder !== 0) {
+        const filler = document.createElement('div');
+        filler.className = 'feat feat-filler';
+        filler.innerHTML = '<div class="feat-header"><div class="feat-icon">🪨</div><h3>Still Crafting</h3></div><p>This slot is reserved for something new. Check Discord for updates.</p>';
+        grid.appendChild(filler);
+      }
+    }
+
+    updateFiller();
+    window.addEventListener('resize', updateFiller);
+  })();
 </script>
 <script src="/nav.js"></script>
 </body>
