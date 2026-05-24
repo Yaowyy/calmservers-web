@@ -222,10 +222,13 @@
     <div class="plugin-header" onclick="toggle(this)" style="background: rgba(203,213,225,0.06);">
       <div class="plugin-icon" style="background: rgba(203,213,225,0.08); border: 1px solid rgba(203,213,225,0.3); color: #CBD5E1;">📦</div>
       <div class="plugin-name" style="color: #CBD5E1;">CalmLoot <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#CBD5E1;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
-      <div class="plugin-tag" style="background: rgba(203,213,225,0.08); color: #CBD5E1; border: 1px solid rgba(203,213,225,0.3);">v1.6.6</div>
+      <div class="plugin-tag" style="background: rgba(203,213,225,0.08); color: #CBD5E1; border: 1px solid rgba(203,213,225,0.3);">v1.6.8</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">23 May 2026</span><span class="version-text">V1.6.7 — 1.6.8</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Food crate (crate_normal_2_food) now rolls 2–3 times with updated quantities (1–4 per item), water items capped at 1 and cannot stack with each other.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Medical crate (crate_normal_2_medical) quantities increased across all items, bandage is removed from the pool after being rolled to guarantee a syringe or medkit drop.</div>
       <div class="change-group-date"><span class="date-text">21 May 2026</span><span class="version-text">V1.5.4 — 1.6.6</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Enabled crate_basic, crate_basic_jungle, crate_mine, crate_normal and crate_tools with the new double-clear loot system. Each crate now has a distinct loot structure with weighted rolls and category guarantees.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Changed how the plugin hooks into the game's loot system to prevent interfering with crate initialization. This fixes a potential issue where the plugin could block other crate-related systems from running correctly.</div>
@@ -265,19 +268,35 @@
 
   <div class="plugins-container">
 
-  <!-- CalmProtection — RED -->
-  <div class="plugin theme-red open">
+  <!-- CalmAnnouncer — ORANGE -->
+  <div class="plugin theme-orange open">
     <div class="plugin-header" onclick="toggle(this)">
-      <div class="plugin-icon">🛡️</div>
-      <div class="plugin-name">CalmProtection</div>
-      <div class="plugin-tag">v1.1.1</div>
+      <div class="plugin-icon">📢</div>
+      <div class="plugin-name">CalmAnnouncer <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#F5A623;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-tag">v1.0.8</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
-      <div class="change-group-date">10 May 2026</div>
+      <div class="change-group-date"><span class="date-text">21 May 2026</span><span class="version-text">V1.0.8</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Updated server announcements with even more new messages.</div>
+      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.7</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Updated server announcements with new messages.</div>
+    </div>
+  </div>
+
+  <!-- CalmNight — PURPLE -->
+  <div class="plugin theme-purple open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">🌙</div>
+      <div class="plugin-name">CalmNight</div>
+      <div class="plugin-tag">v1.1.0</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="change-group-date">15 May 2026</div>
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
-        Fixed a configuration bug. No gameplay changes.
+        Fixed an issue where events like airdrops and helicopters would stop spawning after skipping night.
       </div>
     </div>
   </div>
@@ -316,39 +335,23 @@
     </div>
   </div>
 
-  <!-- CalmAnnouncer — ORANGE -->
-  <div class="plugin theme-orange open">
+  <!-- CalmProtection — RED -->
+  <div class="plugin theme-red open">
     <div class="plugin-header" onclick="toggle(this)">
-      <div class="plugin-icon">📢</div>
-      <div class="plugin-name">CalmAnnouncer</div>
-      <div class="plugin-tag">v1.0.7</div>
+      <div class="plugin-icon">🛡️</div>
+      <div class="plugin-name">CalmProtection</div>
+      <div class="plugin-tag">v1.1.1</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
-      <div class="change-group-date">11 May 2026</div>
+      <div class="change-group-date">10 May 2026</div>
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
-        Updated server announcements with new messages.
+        Fixed a configuration bug. No gameplay changes.
       </div>
     </div>
   </div>
 
-  <!-- CalmNight — PURPLE -->
-  <div class="plugin theme-purple open">
-    <div class="plugin-header" onclick="toggle(this)">
-      <div class="plugin-icon">🌙</div>
-      <div class="plugin-name">CalmNight</div>
-      <div class="plugin-tag">v1.1.0</div>
-      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-    <div class="plugin-body">
-      <div class="change-group-date">15 May 2026</div>
-      <div class="change-item">
-        <div class="bullet-wrap"><span class="bullet"></span></div>
-        Fixed an issue where events like airdrops and helicopters would stop spawning after skipping night.
-      </div>
-    </div>
-  </div>
   </div><!-- /plugins-container -->
 
 </main>
