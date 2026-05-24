@@ -101,7 +101,13 @@
       font-size: .7rem; font-weight: 700; letter-spacing: .12em;
       text-transform: uppercase; color: var(--muted);
       border-bottom: 1px solid var(--border);
+      cursor: default; transition: color .2s;
     }
+    .change-group-date:hover { color: var(--text); }
+    .change-group-date .date-text { transition: opacity .2s; }
+    .change-group-date .version-text { display: none; opacity: 0; transition: opacity .2s; }
+    .change-group-date:hover .date-text { display: none; }
+    .change-group-date:hover .version-text { display: inline; opacity: 1; }
     .plugin-chevron {
       width: 20px; height: 20px; opacity: .6; transition: transform .3s;
       flex-shrink: 0;
@@ -216,19 +222,23 @@
     <div class="plugin-header" onclick="toggle(this)" style="background: rgba(203,213,225,0.06);">
       <div class="plugin-icon" style="background: rgba(203,213,225,0.08); border: 1px solid rgba(203,213,225,0.3); color: #CBD5E1;">📦</div>
       <div class="plugin-name" style="color: #CBD5E1;">CalmLoot <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#CBD5E1;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
-      <div class="plugin-tag" style="background: rgba(203,213,225,0.08); color: #CBD5E1; border: 1px solid rgba(203,213,225,0.3);">v1.5.3</div>
+      <div class="plugin-tag" style="background: rgba(203,213,225,0.08); color: #CBD5E1; border: 1px solid rgba(203,213,225,0.3);">v1.6.6</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
-      <div class="change-group-date">20 May 2026</div>
+      <div class="change-group-date"><span class="date-text">21 May 2026</span><span class="version-text">V1.5.4 — 1.6.6</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Enabled crate_basic, crate_basic_jungle, crate_mine, crate_normal and crate_tools with the new double-clear loot system. Each crate now has a distinct loot structure with weighted rolls and category guarantees.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Changed how the plugin hooks into the game's loot system to prevent interfering with crate initialization. This fixes a potential issue where the plugin could block other crate-related systems from running correctly.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Patrol helicopter crates have been completely restructured. Each crate now guarantees a weapon and two ammo types, with a 40% chance of finding a rocket, C4, MLRS rocket or explosives, and a 10% chance of an advanced blueprint fragment.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Basic box crates (crate_normal_2) have been enabled and restructured. Each crate guarantees a component alongside a weighted roll — 80% chance of weapons, grenades, armor or tools, and 20% chance of electronics or deployables.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Vehicle parts containers are now active with the custom loot system, dropping two unique engine parts alongside guaranteed scrap.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>New chinook hackable crates logic have been temporarily disabled while the map marker issue is being investigated.</div>
+      <div class="change-group-date"><span class="date-text">20 May 2026</span><span class="version-text">V1.2.4 — 1.5.3</span></div>
       <div class="change-item"><span style="color:#E05252;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">−</span>Removed longsword, ballista.mounted, ballista.static, batteringram, catapult, rf.detonator, smart.alarm, smart.switch, storage.monitor, electric.counter, electric.hbhfsensor, electric.laserdetector, electric.digitalclock, electric.andswitch, electrical.memorycell, electric.random.switch, electric.rf.broadcaster, electric.rf.receiver, electric.seismicsensor from military crate.</div>
       <div class="change-item"><span style="color:#E05252;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">−</span>Removed minicrossbow, salvaged.sword from supply drop weapons.</div>
       <div class="change-item"><span style="color:#E05252;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">−</span>Removed ballista bolts and catapult ammo from supply drop ammo.</div>
-      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added workbench upgrades (accelerated, comfort, defensive, efficiency, prototype, range, recyclebin, reinforced, salvage, surplus) to military crate.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added guaranteed crude oil (15–25) and low grade fuel (8–15) to oil barrels — both items always drop.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added guaranteed blowpipe to jungle crates alongside 1 dart ammo and 1 medical/other item.</div>
-      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added guaranteed rocket or C4 and guaranteed ammo to patrol helicopter crates.</div>
-      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added 10% chance of advanced blueprint fragment to patrol helicopter crates.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added chainsaw, jackhammer as guaranteed tool to supply drop.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added guaranteed explosive (satchel or C4) and guaranteed explosive to supply drop.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added guaranteed metal.refined (36–56) to supply drop.</div>
@@ -237,7 +247,7 @@
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Supply drop restructured with guaranteed picks from weapons, clothing, components, ammo, explosives, tools and weapon mods.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Heli crate restructured with guaranteed rocket/C4, guaranteed ammo, plus 2 random rolls.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Crate mine now rolls twice with 40% chance tools, 60% chance resources per roll.</div>
-      <div class="change-group-date">19 May 2026</div>
+      <div class="change-group-date"><span class="date-text">19 May 2026</span><span class="version-text">V1.0.0 — 1.2.3</span></div>
       <div class="change-item"><span style="color:#E05252;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">−</span>Removed shirt.tanktop, shutter.wood.a, hat.candle, stonehatchet, stone.pickaxe, spinner.wheel, table, tunalight, fun.guitar, barricade.stone, barricade.wood.cover from basic crates.</div>
       <div class="change-item"><span style="color:#E05252;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">−</span>Removed bucket.helmet, arrow.fire, wood (5000) from supply drop.</div>
       <div class="change-item"><span style="color:#E05252;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">−</span>Removed skidoo from elite crate.</div>
