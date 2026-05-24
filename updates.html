@@ -222,10 +222,13 @@
     <div class="plugin-header" onclick="toggle(this)" style="background: rgba(203,213,225,0.06);">
       <div class="plugin-icon" style="background: rgba(203,213,225,0.08); border: 1px solid rgba(203,213,225,0.3); color: #CBD5E1;">📦</div>
       <div class="plugin-name" style="color: #CBD5E1;">CalmLoot <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#CBD5E1;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
-      <div class="plugin-tag" style="background: rgba(203,213,225,0.08); color: #CBD5E1; border: 1px solid rgba(203,213,225,0.3);">v1.6.8</div>
+      <div class="plugin-tag" style="background: rgba(203,213,225,0.08); color: #CBD5E1; border: 1px solid rgba(203,213,225,0.3);">v1.7.0</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">24 May 2026</span><span class="version-text">V1.6.9 — 1.7.0</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Foodbox now drops 2 food items with a 20% chance of a bonus water item. All food quantities increased.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Minecart loot quantities increased across all items and now drops a small amount of scrap.</div>
       <div class="change-group-date"><span class="date-text">23 May 2026</span><span class="version-text">V1.6.7 — 1.6.8</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Food crate (crate_normal_2_food) now rolls 2–3 times with updated quantities (1–4 per item), water items capped at 1 and cannot stack with each other.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Medical crate (crate_normal_2_medical) quantities increased across all items, bandage is removed from the pool after being rolled to guarantee a syringe or medkit drop.</div>
@@ -268,11 +271,35 @@
 
   <div class="plugins-container">
 
+  <!-- CalmProtection — RED -->
+  <div class="plugin theme-red open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">🛡️</div>
+      <div class="plugin-name">CalmProtection <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#F5A623;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-tag">v1.2.8</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">24 May 2026</span><span class="version-text">V1.1.1 — 1.2.8</span></div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added TC-based group protection — protection now applies when all players authorized on the nearest Tool Cupboard are offline, not just the entity owner.</div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added fallback to owner-based protection when no TC is found within range.</div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added earliest TC priority — when multiple TCs cover the same area, the one placed first is used.</div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added solo/team label to <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> command output.</div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added teammate online detection to <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> — shows "Not protected, teammate online" instead of protection percentage when a teammate is still connected.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Fixed errors related to TC authorized players list access and type mismatches.</div>
+      <div class="change-group-date">10 May 2026</div>
+      <div class="change-item">
+        <div class="bullet-wrap"><span class="bullet"></span></div>
+        Fixed a configuration bug. No gameplay changes.
+      </div>
+    </div>
+  </div>
+
   <!-- CalmAnnouncer — ORANGE -->
   <div class="plugin theme-orange open">
     <div class="plugin-header" onclick="toggle(this)">
       <div class="plugin-icon">📢</div>
-      <div class="plugin-name">CalmAnnouncer <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#F5A623;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-name">CalmAnnouncer</div>
       <div class="plugin-tag">v1.0.8</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
@@ -331,23 +358,6 @@
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
         Minor internal improvements.
-      </div>
-    </div>
-  </div>
-
-  <!-- CalmProtection — RED -->
-  <div class="plugin theme-red open">
-    <div class="plugin-header" onclick="toggle(this)">
-      <div class="plugin-icon">🛡️</div>
-      <div class="plugin-name">CalmProtection</div>
-      <div class="plugin-tag">v1.1.1</div>
-      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-    <div class="plugin-body">
-      <div class="change-group-date">10 May 2026</div>
-      <div class="change-item">
-        <div class="bullet-wrap"><span class="bullet"></span></div>
-        Fixed a configuration bug. No gameplay changes.
       </div>
     </div>
   </div>
