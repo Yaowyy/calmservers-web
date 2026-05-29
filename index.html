@@ -246,9 +246,9 @@
     client.connect 157.85.95.66:28015
     <button class="copy-btn" onclick="copyIP()">Copy</button>
   </div>
-  <div class="wipe-pill">
+  <div class="wipe-pill" id="wipe-pill">
     <span class="dot"></span>
-    WEEKLY WIPES — THURSDAYS 7PM BST
+    <span id="wipe-label">WEEKLY WIPES — THURSDAYS 7PM BST</span>
   </div>
   <a href="https://rustservers.gg/server/5937549/vote" target="_blank" rel="noopener" style="margin-top:1.75rem;display:inline-block;border-radius:4px;overflow:hidden;opacity:0.9;transition:opacity .2s;max-width:100%;width:468px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
     <img src="https://rustservers.gg/votebanner-5937549-4D5988.png" border="0" alt="Vote for EU Calm on RustServers.gg" style="display:block;width:100%;height:auto;" />
@@ -407,6 +407,41 @@
       setTimeout(() => btn.textContent = 'Copy', 2000);
     });
   }
+
+  // Wipe countdown
+  (function() {
+    var WIPE_INTERVAL_MS = 7 * 24 * 60 * 60 * 1000;
+    var BASE_WIPE = new Date('2026-06-04T18:00:00Z'); // Thu 4 Jun 7PM BST = 18:00 UTC
+
+    function nextWipe() {
+      var now = Date.now();
+      var base = BASE_WIPE.getTime();
+      var elapsed = now - base;
+      if (elapsed < 0) return BASE_WIPE;
+      var cycles = Math.floor(elapsed / WIPE_INTERVAL_MS) + 1;
+      return new Date(base + cycles * WIPE_INTERVAL_MS);
+    }
+
+    function pad(n) { return n < 10 ? '0' + n : '' + n; }
+
+    function tick() {
+      var label = document.getElementById('wipe-label');
+      if (!label) return;
+      var diff = nextWipe().getTime() - Date.now();
+      if (diff <= 0) { label.textContent = 'WIPE HAPPENING NOW'; return; }
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+      var parts = d > 0
+        ? 'WIPE IN ' + d + 'D ' + pad(h) + 'H ' + pad(m) + 'M ' + pad(s) + 'S'
+        : 'WIPE IN ' + pad(h) + 'H ' + pad(m) + 'M ' + pad(s) + 'S';
+      label.textContent = parts;
+    }
+
+    tick();
+    setInterval(tick, 1000);
+  })();
 
   // Auto-inject filler tile if last row of features grid is incomplete
   (function() {
