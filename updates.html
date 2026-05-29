@@ -216,12 +216,50 @@
     <p class="page-sub">All changes to our <span style="color:var(--orange);font-weight:600;">Calm</span> plugins in one place.</p>
   </div>
 
-  <!-- CalmLoot — SILVER -->
   <div class="plugins-container">
+
+  <!-- CalmAnnouncer — ORANGE -->
+  <div class="plugin theme-orange open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">📢</div>
+      <div class="plugin-name">CalmAnnouncer <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#F5A623;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-tag">v1.0.9</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">29 May 2026</span><span class="version-text">V1.0.9</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Implemented a config for admin efficiency (yes like in CalmHelper).</div>
+      <div class="change-group-date"><span class="date-text">21 May 2026</span><span class="version-text">V1.0.8</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Updated server announcements with even more new messages.</div>
+      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.7</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Updated server announcements with new messages.</div>
+    </div>
+  </div>
+
+  <!-- CalmHelper — GREEN -->
+  <div class="plugin theme-green open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">🔧</div>
+      <div class="plugin-name">CalmHelper <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#F5A623;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-tag">v1.1.2</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">29 May 2026</span><span class="version-text">V1.1.2</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Implemented a config for admin efficiency (yes like in CalmAnnouncer).</div>
+      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.1.1</span></div>
+      <div class="change-item">
+        <span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>
+        Added <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/vote</code> command to the help menu.
+      </div>
+    </div>
+  </div>
+
+  <!-- CalmLoot — SILVER -->
   <div class="plugin open" style="border-color: rgba(203,213,225,0.3);">
     <div class="plugin-header" onclick="toggle(this)" style="background: rgba(203,213,225,0.06);">
       <div class="plugin-icon" style="background: rgba(203,213,225,0.08); border: 1px solid rgba(203,213,225,0.3); color: #CBD5E1;">📦</div>
-      <div class="plugin-name" style="color: #CBD5E1;">CalmLoot <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#CBD5E1;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-name" style="color: #CBD5E1;">CalmLoot</div>
       <div class="plugin-tag" style="background: rgba(203,213,225,0.08); color: #CBD5E1; border: 1px solid rgba(203,213,225,0.3);">v1.8.0</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
@@ -279,13 +317,11 @@
     </div>
   </div>
 
-  <div class="plugins-container">
-
   <!-- CalmProtection — RED -->
   <div class="plugin theme-red open">
     <div class="plugin-header" onclick="toggle(this)">
       <div class="plugin-icon">🛡️</div>
-      <div class="plugin-name">CalmProtection <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#F5A623;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-name">CalmProtection</div>
       <div class="plugin-tag">v1.2.8</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
@@ -297,27 +333,11 @@
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added solo/team label to <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> command output.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added teammate online detection to <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> — shows "Not protected, teammate online" instead of protection percentage when a teammate is still connected.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Fixed errors related to TC authorized players list access and type mismatches.</div>
-      <div class="change-group-date">10 May 2026</div>
+      <div class="change-group-date"><span class="date-text">10 May 2026</span><span class="version-text">V1.1.0</span></div>
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
         Fixed a configuration bug. No gameplay changes.
       </div>
-    </div>
-  </div>
-
-  <!-- CalmAnnouncer — ORANGE -->
-  <div class="plugin theme-orange open">
-    <div class="plugin-header" onclick="toggle(this)">
-      <div class="plugin-icon">📢</div>
-      <div class="plugin-name">CalmAnnouncer</div>
-      <div class="plugin-tag">v1.0.8</div>
-      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-    <div class="plugin-body">
-      <div class="change-group-date"><span class="date-text">21 May 2026</span><span class="version-text">V1.0.8</span></div>
-      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Updated server announcements with even more new messages.</div>
-      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.7</span></div>
-      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Updated server announcements with new messages.</div>
     </div>
   </div>
 
@@ -330,27 +350,10 @@
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
-      <div class="change-group-date">15 May 2026</div>
+      <div class="change-group-date"><span class="date-text">15 May 2026</span><span class="version-text">V1.1.0</span></div>
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
         Fixed an issue where events like airdrops and helicopters would stop spawning after skipping night.
-      </div>
-    </div>
-  </div>
-
-  <!-- CalmHelper — GREEN -->
-  <div class="plugin theme-green open">
-    <div class="plugin-header" onclick="toggle(this)">
-      <div class="plugin-icon">🔧</div>
-      <div class="plugin-name">CalmHelper</div>
-      <div class="plugin-tag">v1.1.1</div>
-      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-    <div class="plugin-body">
-      <div class="change-group-date">11 May 2026</div>
-      <div class="change-item">
-        <span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>
-        Added <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/vote</code> command to the help menu.
       </div>
     </div>
   </div>
@@ -364,7 +367,7 @@
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
-      <div class="change-group-date">11 May 2026</div>
+      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.6</span></div>
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
         Minor internal improvements.
