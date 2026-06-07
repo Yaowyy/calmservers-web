@@ -144,6 +144,11 @@
     .feat-silver .feat-header h3 { color: #CBD5E1; }
     .feat-silver .feat-overlay { background: rgba(20,26,31,0.92); color: #CBD5E1; }
     .feat-silver:hover .feat-overlay { opacity: 1; }
+    .feat-cyan { background: #0d1a22; position: relative; overflow: hidden; cursor: pointer; }
+    .feat-cyan:hover { background: #102030; }
+    .feat-cyan .feat-header h3 { color: #38BDF8; }
+    .feat-cyan .feat-overlay { background: rgba(13,26,34,0.92); color: #38BDF8; }
+    .feat-cyan:hover .feat-overlay { opacity: 1; }
     .feat-filler { background: var(--bg2); opacity: .4; cursor: default; }
     .feat-filler:hover { background: var(--bg2); opacity: .6; }
     .feat-filler h3 { color: var(--muted); }
@@ -246,9 +251,9 @@
     client.connect 157.85.95.66:28015
     <button class="copy-btn" onclick="copyIP()">Copy</button>
   </div>
-  <div class="wipe-pill" id="wipe-pill">
+  <div class="wipe-pill">
     <span class="dot"></span>
-    <span id="wipe-label">WEEKLY WIPES — THURSDAYS 7PM BST</span>
+    WEEKLY WIPES — THURSDAYS 7PM BST
   </div>
   <a href="https://rustservers.gg/server/5937549/vote" target="_blank" rel="noopener" style="margin-top:1.75rem;display:inline-block;border-radius:4px;overflow:hidden;opacity:0.9;transition:opacity .2s;max-width:100%;width:468px;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
     <img src="https://rustservers.gg/votebanner-5937549-4D5988.png" border="0" alt="Vote for EU Calm on RustServers.gg" style="display:block;width:100%;height:auto;" />
@@ -285,6 +290,11 @@
     </div>
     <div class="container">
     <div class="features">
+      <a href="updates.html" class="feat feat-cyan" style="text-decoration:none;display:block;">
+        <div class="feat-header"><div class="feat-icon">📘</div><h3>Calm BP</h3></div>
+        <p>Share your blueprints with the team for some scrap with one simple command!</p>
+        <div class="feat-overlay"><span>Read Changelog →</span><small>updates page</small></div>
+      </a>
       <a href="updates.html" class="feat feat-red" style="text-decoration:none;display:block;">
         <div class="feat-header"><div class="feat-icon">🛡️</div><h3>Calm Protection</h3></div>
         <p>
@@ -295,17 +305,22 @@
         </p>
         <div class="feat-overlay"><span>Read Changelog →</span><small>updates page</small></div>
       </a>
-      <div class="feat">
-        <div class="feat-header"><div class="feat-icon">🚁</div><h3>Heli Crashes Anywhere</h3></div>
-        <p>Helicopter crashes happen across the full map, not just monuments. More loot, more action.</p>
-      </div>
+      <a href="updates.html" class="feat feat-silver" style="text-decoration:none;display:block;">
+        <div class="feat-header"><div class="feat-icon">📦</div><h3>Calm Loot</h3></div>
+        <p>Custom loot pool provides less junk and slightly more components and scrap from crates!</p>
+        <div class="feat-overlay"><span>Read Changelog →</span><small>updates page</small></div>
+      </a>
       <a href="updates.html" class="feat feat-purple" style="text-decoration:none;display:block;">
         <div class="feat-header"><div class="feat-icon">🌙</div><h3>Calm Night</h3></div>
         <p>Community can vote to fast-forward through the night so you're never stuck waiting.</p>
         <div class="feat-overlay"><span>Read Changelog →</span><small>updates page</small></div>
       </a>
       <div class="feat">
-        <div class="feat-header"><div class="feat-icon">📦</div><h3>Stack Modifier</h3></div>
+        <div class="feat-header"><div class="feat-icon">🚁</div><h3>Heli Crashes Anywhere</h3></div>
+        <p>Helicopter crashes happen across the full map, not just monuments. More loot, more action.</p>
+      </div>
+      <div class="feat">
+        <div class="feat-header"><div class="feat-icon">🪣</div><h3>Stack Modifier</h3></div>
         <p>Larger stack sizes reduce inventory frustration without changing the core economy.</p>
       </div>
       <div class="feat">
@@ -320,11 +335,6 @@
         <div class="feat-header"><div class="feat-icon">🔫</div><h3>Auto Turret Auth</h3></div>
         <p>Automatically register your teammates when placing turrets to avoid teamkills.</p>
       </div>
-      <a href="updates.html" class="feat feat-silver" style="text-decoration:none;display:block;">
-        <div class="feat-header"><div class="feat-icon">📦</div><h3>Calm Loot</h3></div>
-        <p>Custom loot pool provides less junk and slightly more components and scrap from crates!</p>
-        <div class="feat-overlay"><span>Read Changelog →</span><small>updates page</small></div>
-      </a>
       <div class="feat">
         <div class="feat-header"><div class="feat-icon">🗺️</div><h3>Map My Airdrop</h3></div>
         <p>Airdrop locations are marked on the map until looted.</p>
@@ -408,50 +418,14 @@
     });
   }
 
-  // Wipe countdown
-  (function() {
-    var WIPE_INTERVAL_MS = 7 * 24 * 60 * 60 * 1000;
-    var BASE_WIPE = new Date('2026-06-04T18:00:00Z'); // Thu 4 Jun 7PM BST = 18:00 UTC
-
-    function nextWipe() {
-      var now = Date.now();
-      var base = BASE_WIPE.getTime();
-      var elapsed = now - base;
-      if (elapsed < 0) return BASE_WIPE;
-      var cycles = Math.floor(elapsed / WIPE_INTERVAL_MS) + 1;
-      return new Date(base + cycles * WIPE_INTERVAL_MS);
-    }
-
-    function pad(n) { return n < 10 ? '0' + n : '' + n; }
-
-    function tick() {
-      var label = document.getElementById('wipe-label');
-      if (!label) return;
-      var diff = nextWipe().getTime() - Date.now();
-      if (diff <= 0) { label.textContent = 'WIPE HAPPENING NOW'; return; }
-      var d = Math.floor(diff / 86400000);
-      var h = Math.floor((diff % 86400000) / 3600000);
-      var m = Math.floor((diff % 3600000) / 60000);
-      var s = Math.floor((diff % 60000) / 1000);
-      var parts = d > 0
-        ? 'WIPE IN ' + d + 'D ' + pad(h) + 'H ' + pad(m) + 'M ' + pad(s) + 'S'
-        : 'WIPE IN ' + pad(h) + 'H ' + pad(m) + 'M ' + pad(s) + 'S';
-      label.textContent = parts;
-    }
-
-    tick();
-    setInterval(tick, 1000);
-  })();
-
   // Auto-inject filler tile if last row of features grid is incomplete
   (function() {
     const grid = document.querySelector('.features');
     if (!grid) return;
 
     function updateFiller() {
-      // Remove any existing filler first
-      const existing = grid.querySelector('.feat-filler');
-      if (existing) existing.remove();
+      // Remove all existing fillers first
+      grid.querySelectorAll('.feat-filler').forEach(el => el.remove());
 
       const tiles = grid.querySelectorAll('.feat:not(.feat-filler)').length;
       const firstTile = grid.querySelector('.feat');
@@ -460,10 +434,13 @@
       if (cols < 2) return; // single column — no filler needed
       const remainder = tiles % cols;
       if (remainder !== 0) {
-        const filler = document.createElement('div');
-        filler.className = 'feat feat-filler';
-        filler.innerHTML = '<div class="feat-header"><div class="feat-icon">🪨</div><h3>Still Crafting</h3></div><p>This slot is reserved for something new. Check Discord for updates.</p>';
-        grid.appendChild(filler);
+        const needed = cols - remainder;
+        for (let i = 0; i < needed; i++) {
+          const filler = document.createElement('div');
+          filler.className = 'feat feat-filler';
+          filler.innerHTML = '<div class="feat-header"><div class="feat-icon">🪨</div><h3>Still Crafting</h3></div><p>This slot is reserved for something new. Check Discord for updates.</p>';
+          grid.appendChild(filler);
+        }
       }
     }
 

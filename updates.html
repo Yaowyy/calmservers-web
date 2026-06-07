@@ -53,6 +53,10 @@
       --purple:    #9B6DD6;
       --purple-bg: rgba(155, 109, 214, 0.08);
       --purple-border: rgba(155, 109, 214, 0.3);
+
+      --cyan:    #38BDF8;
+      --cyan-bg: rgba(56, 189, 248, 0.08);
+      --cyan-border: rgba(56, 189, 248, 0.3);
     }
 
     html { scroll-behavior: smooth; }
@@ -177,6 +181,13 @@
     .theme-purple .bullet        { background: var(--purple); }
     .theme-purple                { border-color: var(--purple-border); }
 
+    .theme-cyan .plugin-header { background: var(--cyan-bg); }
+    .theme-cyan .plugin-name   { color: var(--cyan); }
+    .theme-cyan .plugin-icon   { background: var(--cyan-bg); color: var(--cyan); border: 1px solid var(--cyan-border); }
+    .theme-cyan .plugin-tag    { background: var(--cyan-bg); color: var(--cyan); border: 1px solid var(--cyan-border); }
+    .theme-cyan .bullet        { background: var(--cyan); }
+    .theme-cyan                { border-color: var(--cyan-border); }
+
     /* FOOTER */
     footer {
       border-top: 1px solid rgba(245,166,35,0.18); padding: 2rem;
@@ -217,6 +228,30 @@
   </div>
 
   <div class="plugins-container">
+  <!-- CalmBP — CYAN -->
+  <div class="plugin theme-cyan open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">📘</div>
+      <div class="plugin-name">CalmBP <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#38BDF8;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-tag">v1.0.0</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">7 Jun 2026</span><span class="version-text">V1.0.0</span></div>
+      <div class="change-item"><span style="color:#38BDF8;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span>Initial release. Shared team blueprints with scrap cost and pending pool system.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>When a teammate studies a blueprint, it is added to your pending pool — not given for free.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div><span>Type <code style="background:rgba(56,189,248,0.15);color:#38BDF8;padding:1px 6px;border-radius:3px;font-size:.85em;">/share</code> to buy everything in your pending pool at once for <strong>6 scrap per blueprint</strong>.</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div><span>Pending pool accumulates across multiple teammate shares — <code style="background:rgba(56,189,248,0.15);color:#38BDF8;padding:1px 6px;border-radius:3px;font-size:.85em;">/share</code> always buys the full pool in one go.</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>If you independently learn a blueprint via workbench while it sits in your pool, it is automatically removed and the cost adjusted — you are never charged for something you already know.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>When you join a team, you are offered the team's current blueprints as a pending pool with the scrap cost shown. Your own blueprints are offered to your new teammates simultaneously.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>If you leave a team while you have a pending pool, the pool is wiped and you see how many blueprints you have lost access to.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div><span>Leaving a team starts a <strong>24 hour cooldown</strong> — you cannot accumulate a pending pool in a new team until it expires, and your new teammates cannot receive blueprints from you either.</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>If you are offline when teammates study blueprints, the pending pool accumulates silently — on login you see the total count and scrap cost.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div><span>Blueprint sharing is limited to teams of <strong>5 or fewer</strong> players. Extras are silently skipped — no one is punished.</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Pending pool and cooldown timestamps are saved to a data file and survive server restarts.</div>
+    </div>
+  </div>
+
 
 <!-- CalmLoot — SILVER -->
   <div class="plugin open" style="border-color: rgba(203,213,225,0.3);">
@@ -298,6 +333,7 @@
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Heli crate restructured with guaranteed rocket/C4, guaranteed ammo, plus 2 random rolls.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet" style="background:#CBD5E1;"></span></div>Crate mine now rolls twice with 40% chance tools, 60% chance resources per roll.</div>
       <div class="change-group-date"><span class="date-text">19 May 2026</span><span class="version-text">V1.0.0 — 1.2.3</span></div>
+      <div class="change-item"><span style="color:#CBD5E1;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span>Initial release. Adopted the raw population logic of BetterLoot plugin.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added tier 2 vehicle parts (carburetor2, crankshaft2, piston2, sparkplug2, valve2) to vehicle parts container.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added advanced blueprint fragments (1–2) as guaranteed drop to all chinook hackable crates.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added guaranteed rocket or C4 to Bradley and Patrol Helicopter crates.</div>
@@ -317,23 +353,24 @@
   <div class="plugin theme-red open">
     <div class="plugin-header" onclick="toggle(this)">
       <div class="plugin-icon">🛡️</div>
-      <div class="plugin-name">CalmProtection <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#F5A623;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-name">CalmProtection</div>
       <div class="plugin-tag">v1.2.9</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
       <div class="change-group-date"><span class="date-text">3 Jun 2026</span><span class="version-text">V1.2.9</span></div>
-      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div><code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> command now shows approximate offline time (e.g. "around 6-7 hours") instead of exact time.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div><span><code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> command now shows approximate offline time (e.g. "around 6-7 hours") instead of exact time.</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Players offline less than 10 minutes now show as "Just logged out".</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Players in cooldown period (under 10 min offline) now correctly show "Not protected".</div>
       <div class="change-group-date"><span class="date-text">24 May 2026</span><span class="version-text">V1.1.1 — 1.2.8</span></div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added TC-based group protection — protection now applies when all players authorized on the nearest Tool Cupboard are offline, not just the entity owner.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added fallback to owner-based protection when no TC is found within range.</div>
       <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added earliest TC priority — when multiple TCs cover the same area, the one placed first is used.</div>
-      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added solo/team label to <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> command output.</div>
-      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>Added teammate online detection to <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> — shows "Not protected, teammate online" instead of protection percentage when a teammate is still connected.</div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span><span>Added solo/team label to <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> command output.</span></div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span><span>Added teammate online detection to <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> — shows "Not protected, teammate online" instead of protection percentage when a teammate is still connected.</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Fixed errors related to TC authorized players list access and type mismatches.</div>
-      <div class="change-group-date"><span class="date-text">10 May 2026</span><span class="version-text">V1.1.0</span></div>
+      <div class="change-group-date"><span class="date-text">10 May 2026</span><span class="version-text">V1.0.0 — 1.1.0</span></div>
+      <div class="change-item"><span style="color:#E05252;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span>Initial release. Adopted the raw offline protection logic of AntiOfflineRaid plugin.</div>
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
         Fixed a configuration bug. No gameplay changes.
@@ -354,7 +391,8 @@
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Implemented a config for admin efficiency (yes like in CalmHelper).</div>
       <div class="change-group-date"><span class="date-text">21 May 2026</span><span class="version-text">V1.0.8</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Updated server announcements with even more new messages.</div>
-      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.7</span></div>
+      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.0 — 1.0.7</span></div>
+      <div class="change-item"><span style="color:#F5A623;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span>Initial release. Shows server announcements from the list with the interval set by admins.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Updated server announcements with new messages.</div>
     </div>
   </div>
@@ -370,10 +408,11 @@
     <div class="plugin-body">
       <div class="change-group-date"><span class="date-text">29 May 2026</span><span class="version-text">V1.1.2</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Implemented a config for admin efficiency (yes like in CalmAnnouncer).</div>
-      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.1.1</span></div>
+      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.0 — 1.1.1</span></div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span><span>Initial release. Shows the list of available commands if the player types <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/help</code> in the game chat.</span></div>
       <div class="change-item">
         <span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>
-        Added <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/vote</code> command to the help menu.
+        <span>Added <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/vote</code> command to the help menu.</span>
       </div>
     </div>
   </div>
@@ -387,7 +426,8 @@
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
-      <div class="change-group-date"><span class="date-text">15 May 2026</span><span class="version-text">V1.1.0</span></div>
+      <div class="change-group-date"><span class="date-text">15 May 2026</span><span class="version-text">V1.0.0 — 1.1.0</span></div>
+      <div class="change-item"><span style="color:#9B6DD6;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span>Initial release. Adopted the raw logic of the SkipNight plugin.</div>
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
         Fixed an issue where events like airdrops and helicopters would stop spawning after skipping night.
@@ -404,7 +444,10 @@
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
-      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.6</span></div>
+      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.0 — 1.0.6</span></div>
+      <div class="change-item"><span style="color:#4D8EE0;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span>Initial release. Adopted the raw logic of the EasyVote plugin.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Hooked API from rustservers.gg to the voting system.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Implemented 100 scrap, 500 wood and 1000 stone reward for the first vote, 100 scrap on each next vote, 200 scrap on each 5th vote and 300 scrap on each 10th vote.</div>
       <div class="change-item">
         <div class="bullet-wrap"><span class="bullet"></span></div>
         Minor internal improvements.
