@@ -228,15 +228,40 @@
   </div>
 
   <div class="plugins-container">
+  <!-- CalmHelper — GREEN -->
+  <div class="plugin theme-green open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">🔧</div>
+      <div class="plugin-name">CalmHelper</div>
+      <div class="plugin-tag">v1.1.3</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">8 Jun 2026</span><span class="version-text">V1.1.3</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div><span>Added <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/share</code> to the <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/help</code> command menu.</span></div>
+      <div class="change-group-date"><span class="date-text">29 May 2026</span><span class="version-text">V1.1.2</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Implemented a config for admin efficiency (yes like in CalmAnnouncer).</div>
+      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.0 — 1.1.1</span></div>
+      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span><span>Initial release. Shows the list of available commands if the player types <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/help</code> in the game chat.</span></div>
+      <div class="change-item">
+        <span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>
+        <span>Added <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/vote</code> command to the help menu.</span>
+      </div>
+    </div>
+  </div>
+
   <!-- CalmBP — CYAN -->
   <div class="plugin theme-cyan open">
     <div class="plugin-header" onclick="toggle(this)">
       <div class="plugin-icon">📘</div>
-      <div class="plugin-name">CalmBP <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#38BDF8;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
-      <div class="plugin-tag">v1.1.9</div>
+      <div class="plugin-name">CalmBP</div>
+      <div class="plugin-tag">v1.2.0</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">8 Jun 2026</span><span class="version-text">V1.2.0</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Fixed null reference crash on server restart — blueprint list and team sync now wait 10 seconds after load to ensure the server is fully ready.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Added null guards on team data, blueprint lists and player references to prevent future crashes.</div>
       <div class="change-group-date"><span class="date-text">8 Jun 2026</span><span class="version-text">V1.0.0 — 1.1.9</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Fixed crash caused by incorrect hook signature for workbench tech tree research.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Workbench tech tree research now properly triggers blueprint sharing.</div>
@@ -263,7 +288,7 @@
   <div class="plugin open" style="border-color: rgba(203,213,225,0.3);">
     <div class="plugin-header" onclick="toggle(this)" style="background: rgba(203,213,225,0.06);">
       <div class="plugin-icon" style="background: rgba(203,213,225,0.08); border: 1px solid rgba(203,213,225,0.3); color: #CBD5E1;">📦</div>
-      <div class="plugin-name" style="color: #CBD5E1;">CalmLoot <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#F5A623;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
+      <div class="plugin-name" style="color: #CBD5E1;">CalmLoot</div>
       <div class="plugin-tag" style="background: rgba(203,213,225,0.08); color: #CBD5E1; border: 1px solid rgba(203,213,225,0.3);">v1.9.5</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
@@ -403,26 +428,6 @@
     </div>
   </div>
 
-  <!-- CalmHelper — GREEN -->
-  <div class="plugin theme-green open">
-    <div class="plugin-header" onclick="toggle(this)">
-      <div class="plugin-icon">🔧</div>
-      <div class="plugin-name">CalmHelper</div>
-      <div class="plugin-tag">v1.1.2</div>
-      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-    </div>
-    <div class="plugin-body">
-      <div class="change-group-date"><span class="date-text">29 May 2026</span><span class="version-text">V1.1.2</span></div>
-      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Implemented a config for admin efficiency (yes like in CalmAnnouncer).</div>
-      <div class="change-group-date"><span class="date-text">11 May 2026</span><span class="version-text">V1.0.0 — 1.1.1</span></div>
-      <div class="change-item"><span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span><span>Initial release. Shows the list of available commands if the player types <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/help</code> in the game chat.</span></div>
-      <div class="change-item">
-        <span style="color:#4CAF7D;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">+</span>
-        <span>Added <code style="background:rgba(76,175,125,0.15);color:#4CAF7D;padding:1px 6px;border-radius:3px;font-size:.85em;">/vote</code> command to the help menu.</span>
-      </div>
-    </div>
-  </div>
-
   <!-- CalmNight — PURPLE -->
   <div class="plugin theme-purple open">
     <div class="plugin-header" onclick="toggle(this)">
@@ -482,6 +487,35 @@
     const plugin = header.closest('.plugin');
     plugin.classList.toggle('open');
   }
+
+  (function() {
+    const container = document.querySelector('.plugins-container');
+    const plugins = Array.from(container.querySelectorAll(':scope > .plugin'));
+    plugins.sort((a, b) => {
+      const dateA = new Date(a.querySelector('.change-group-date .date-text').textContent.trim());
+      const dateB = new Date(b.querySelector('.change-group-date .date-text').textContent.trim());
+      return dateB - dateA;
+    });
+    plugins.forEach((p, i) => {
+      // Remove any existing NEW labels added by this script
+      p.querySelectorAll('.js-new-label').forEach(el => el.remove());
+      if (i < 2) {
+        const name = p.querySelector('.plugin-name');
+        if (name) {
+          const label = document.createElement('span');
+          label.className = 'js-new-label';
+          label.style.cssText = 'font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;opacity:.7;text-transform:uppercase;vertical-align:middle;margin-left:6px;';
+          // Pick colour from the plugin's theme
+          const theme = Array.from(p.classList).find(c => c.startsWith('theme-'));
+          const colours = { 'theme-cyan': '#38BDF8', 'theme-green': '#4CAF7D', 'theme-red': '#E05252', 'theme-orange': '#F5A623', 'theme-purple': '#9B6DD6', 'theme-blue': '#4D8EE0' };
+          label.style.color = colours[theme] || 'var(--orange)';
+          label.textContent = 'new';
+          name.appendChild(label);
+        }
+      }
+      container.appendChild(p);
+    });
+  })();
 </script>
 
 <script src="/nav.js"></script>
