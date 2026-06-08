@@ -232,11 +232,17 @@
   <div class="plugin theme-cyan open">
     <div class="plugin-header" onclick="toggle(this)">
       <div class="plugin-icon">📘</div>
-      <div class="plugin-name">CalmBP <span style="font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;color:#38BDF8;opacity:.7;text-transform:uppercase;vertical-align:middle;">new</span></div>
-      <div class="plugin-tag">v1.0.0</div>
+      <div class="plugin-name">CalmBP</div>
+      <div class="plugin-tag">v1.1.9</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">8 Jun 2026</span><span class="version-text">V1.0.0 — 1.1.9</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Fixed crash caused by incorrect hook signature for workbench tech tree research.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Workbench tech tree research now properly triggers blueprint sharing.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>On plugin load, existing teams are scanned and members are offered each other's missing blueprints — existing cooldowns are respected and no new cooldown is started.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Default blueprints that every player already has are now excluded from the pending pool — players are never charged scrap for something they already know by default.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Scrap cost increased from 6 to 8 per blueprint.</div>
       <div class="change-group-date"><span class="date-text">7 Jun 2026</span><span class="version-text">V1.0.0</span></div>
       <div class="change-item"><span style="color:#38BDF8;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span>Initial release. Shared team blueprints with scrap cost and pending pool system.</div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>When a teammate studies a blueprint, it is added to your pending pool — not given for free.</div>
