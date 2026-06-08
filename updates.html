@@ -385,10 +385,13 @@
     <div class="plugin-header" onclick="toggle(this)">
       <div class="plugin-icon">🛡️</div>
       <div class="plugin-name">CalmProtection</div>
-      <div class="plugin-tag">v1.2.9</div>
+      <div class="plugin-tag">v1.3.0</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">8 Jun 2026</span><span class="version-text">V1.3.0</span></div>
+      <div class="change-item"><span style="color:#E05252;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">✦</span><span>Fixed <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> incorrectly showing <code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">(solo)</code> for players in a team — now checks all TCs the player is authorized on and also checks the in-game Rust team.</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Adjusted protection scaling — first 30 minutes offline are unprotected, 30–60 minutes offline gives 90% protection.</div>
       <div class="change-group-date"><span class="date-text">3 Jun 2026</span><span class="version-text">V1.2.9</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div><span><code style="background:rgba(224,82,82,0.15);color:#E05252;padding:1px 6px;border-radius:3px;font-size:.85em;">/ao</code> command now shows approximate offline time (e.g. "around 6-7 hours") instead of exact time.</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Players offline less than 10 minutes now show as "Just logged out".</div>
@@ -496,10 +499,14 @@
       const dateB = new Date(b.querySelector('.change-group-date .date-text').textContent.trim());
       return dateB - dateA;
     });
-    plugins.forEach((p, i) => {
+    const today = new Date(); today.setHours(0,0,0,0);
+    const yesterday = new Date(today); yesterday.setDate(yesterday.getDate() - 1);
+    plugins.forEach((p) => {
       // Remove any existing NEW labels added by this script
       p.querySelectorAll('.js-new-label').forEach(el => el.remove());
-      if (i < 2) {
+      const firstDate = new Date(p.querySelector('.change-group-date .date-text').textContent.trim());
+      firstDate.setHours(0,0,0,0);
+      if (firstDate.getTime() === today.getTime() || firstDate.getTime() === yesterday.getTime()) {
         const name = p.querySelector('.plugin-name');
         if (name) {
           const label = document.createElement('span');
