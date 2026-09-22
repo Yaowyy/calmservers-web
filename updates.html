@@ -57,6 +57,10 @@
       --cyan:    #38BDF8;
       --cyan-bg: rgba(56, 189, 248, 0.08);
       --cyan-border: rgba(56, 189, 248, 0.3);
+
+      --pink:    #EC6FA8;
+      --pink-bg: rgba(236, 111, 168, 0.08);
+      --pink-border: rgba(236, 111, 168, 0.3);
     }
 
     html { scroll-behavior: smooth; }
@@ -188,6 +192,13 @@
     .theme-cyan .bullet        { background: var(--cyan); }
     .theme-cyan                { border-color: var(--cyan-border); }
 
+    .theme-pink .plugin-header { background: var(--pink-bg); }
+    .theme-pink .plugin-name   { color: var(--pink); }
+    .theme-pink .plugin-icon   { background: var(--pink-bg); color: var(--pink); border: 1px solid var(--pink-border); }
+    .theme-pink .plugin-tag    { background: var(--pink-bg); color: var(--pink); border: 1px solid var(--pink-border); }
+    .theme-pink .bullet        { background: var(--pink); }
+    .theme-pink                { border-color: var(--pink-border); }
+
     /* FOOTER */
     footer {
       border-top: 1px solid rgba(245,166,35,0.18); padding: 2rem;
@@ -228,6 +239,26 @@
   </div>
 
   <div class="plugins-container">
+  <!-- CalmGreeter — PINK -->
+  <div class="plugin theme-pink open">
+    <div class="plugin-header" onclick="toggle(this)">
+      <div class="plugin-icon">👋</div>
+      <div class="plugin-name">CalmGreeter</div>
+      <div class="plugin-tag">v1.1.7</div>
+      <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+    </div>
+    <div class="plugin-body">
+      <div class="change-group-date"><span class="date-text">22 Sep 2026</span><span class="version-text">V1.0.0 — 1.1.7</span></div>
+      <div class="change-item"><span style="color:#EC6FA8;font-weight:700;font-size:.9rem;width:16px;min-width:16px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">★</span>Initial release. Adds an NPC greeter (Hannah) that spawns once per wipe at a random pick between Outpost and Bandit Camp.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Fixed position per monument; peaceful, invulnerable, unarmed; rotates to face the nearest player.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Greets players within 3m via private chat message.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Gives a reward on a 4-hour per-player cooldown, rolled from weighted pools: 92% Food, 7% Heal, 1% Gun. One random item per roll, random amount within range.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Reward message set is chosen by pool category (food / heal / gun).</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>If the player is still on cooldown, sends a returning message instead, no item.</div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Broadcasts a global message at 14:00 and 22:00 (Europe/London) with her current location.</div>
+    </div>
+  </div>
+
   <!-- CalmHelper — GREEN -->
   <div class="plugin theme-green open">
     <div class="plugin-header" onclick="toggle(this)">
@@ -255,11 +286,13 @@
     <div class="plugin-header" onclick="toggle(this)">
       <div class="plugin-icon">📘</div>
       <div class="plugin-name">CalmBP</div>
-      <div class="plugin-tag">v1.2.2</div>
+      <div class="plugin-tag">v1.2.3</div>
       <svg class="plugin-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
     </div>
     <div class="plugin-body">
-      <div class="change-group-date"><span class="date-text">7 Aug 2026</span><span class="version-text">V1.2.2</span></div>
+      <div class="change-group-date"><span class="date-text">22 Sep 2026</span><span class="version-text">V1.2.3</span></div>
+      <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Scrap cost for teams of 5 or more is now always capped at 10 scrap per blueprint, regardless of how large the team grows.</div>
+            <div class="change-group-date"><span class="date-text">7 Aug 2026</span><span class="version-text">V1.2.2</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Minor internal bugfixes.</div>
             <div class="change-group-date"><span class="date-text">3 Jul 2026</span><span class="version-text">V1.2.1</span></div>
       <div class="change-item"><div class="bullet-wrap"><span class="bullet"></span></div>Scrap cost per blueprint now scales with team size — 7 scrap for a team of 2, 8 for 3, 9 for 4, and 10 for a team of 5.</div>
@@ -544,7 +577,7 @@
           label.style.cssText = 'font-family:var(--body);font-size:.65rem;font-weight:700;letter-spacing:.1em;opacity:.7;text-transform:uppercase;vertical-align:middle;margin-left:6px;';
           // Pick colour from the plugin's theme
           const theme = Array.from(p.classList).find(c => c.startsWith('theme-'));
-          const colours = { 'theme-cyan': '#38BDF8', 'theme-green': '#4CAF7D', 'theme-red': '#E05252', 'theme-orange': '#F5A623', 'theme-purple': '#9B6DD6', 'theme-blue': '#4D8EE0' };
+          const colours = { 'theme-cyan': '#38BDF8', 'theme-green': '#4CAF7D', 'theme-red': '#E05252', 'theme-orange': '#F5A623', 'theme-purple': '#9B6DD6', 'theme-blue': '#4D8EE0', 'theme-pink': '#EC6FA8' };
           label.style.color = colours[theme] || 'var(--orange)';
           label.textContent = 'new';
           name.appendChild(label);
